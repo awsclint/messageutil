@@ -13,8 +13,8 @@ phases:
       - mvn install
       - export ABC="123" >> ~/.bashrc
       - env
-      - env | grep ABC
       - echo `ABC`  
+	  - echo $ABC
   post_build:
     commands:
       - echo Build completed on `date` 
