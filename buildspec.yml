@@ -15,53 +15,12 @@ phases:
 
       #Hand type test
       - export ABC="123" >> ~/.bashrc
-
-
-      #- env | grep test >> centosenvechobashrcbuild.txt
-      #- env | grep testprofile >> centosenvechoprofilebuild.txt
-      #- env | grep ubuntutestbash >> ubuntuenvechobashrcbuild.txt
-      #- env | grep ubuntutestprofile >> ubuntuenvechoprofilebuild.txt
-
-      #- echo $(env | grep test)
-      #- echo $(env | grep testprofile)
-      #- echo $(env | grep ubuntutestbash)
-      #- echo $(env | grep ubuntutestprofile)
-      #- source /etc/bash.bashrc && echo $(printenv | grep test) >> printenvbuild.txt
-      #- source /etc/bashrc && echo $(printenv | grep test) >> printenvbuild.txt
-      #- source /etc/profile && echo $(printenv | grep test) >> printenvbuild.txt
-      #- cat /etc/bash.bashrc #&& printenv | grep test >> printenvbuild.txt
-      #- cat /etc/bashrc #&& printenv | grep test >> printenvbuild.txt
-      #- cat /etc/profile #&& printenv | grep test >> printenvbuild.txt
       - env
       - env | grep ABC
-      - echo `ABC`
-
-
-
+      - echo `ABC`  
   post_build:
     commands:
-      - echo Build completed on `date`
-      #- env | grep test >> centosenvechobashrcpostbuild.txt
-      #- env | grep testprofile >> centosenvechoprofilepostbuild.txt
-      #- env | grep ubuntutestbash >> ubuntuenvechobashrcpostbuild.txt
-      #- env | grep ubuntutestprofile >> ubuntuenvechoprofilepostbuild.txt
-
-      #- echo $(env | grep test)
-      #- echo $(env | grep testprofile)
-      #- echo $(env | grep ubuntutestbash)
-      #- echo $(env | grep ubuntutestprofile)
-      #- source /etc/bash.bashrc && echo $(printenv | grep test) >> printenvpostbuild.txt
-      #- source /etc/bashrc && echo $(printenv | grep test) >> printenvpostbuild.txt
-      #- source /etc/profile && echo $(printenv | grep test) >> printenvpostbuild.txt
-      - echo `$casevariabletest`
-      - exec bash && mkdir $casevariabletest
-      - cd $casevariabletest
-      - pwd
-      - echo $casevariabletest >> printenvpostbuild.txt
-      #- cat printenvpostbuild.txt
-
-
-
+      - echo Build completed on `date` 
 artifacts:
   files:
     - target/messageUtil-1.0.jar
