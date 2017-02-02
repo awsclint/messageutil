@@ -12,9 +12,9 @@ phases:
       - echo Build started on `date`
       - mvn install
       - export ABC="123" >> ~/.bashrc
-      - source ~/.bashrc env
-      - source ~/.bashrc echo `ABC`  
-      - source ~/.bashrc echo $ABC
+      - sudo bash && source ~/.bashrc env
+      - sudo bash && source ~/.bashrc echo `ABC`  
+      - sudo bash && source ~/.bashrc echo $ABC
   post_build:
     commands:
       - echo Build completed on `date` 
