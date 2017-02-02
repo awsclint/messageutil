@@ -14,7 +14,7 @@ phases:
       - export ABC="123" >> ~/.bashrc
       - source ~/.bashrc env
       - source ~/.bashrc echo `ABC`  
-	  - source ~/.bashrc echo $ABC
+      - source ~/.bashrc echo $ABC
   post_build:
     commands:
       - echo Build completed on `date` 
