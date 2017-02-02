@@ -7,13 +7,10 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
-      -
   build:
     commands:
       - echo Build started on `date`
       - mvn install
-
-      #Hand type test
       - export ABC="123" >> ~/.bashrc
       - env
       - env | grep ABC
