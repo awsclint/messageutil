@@ -13,17 +13,8 @@ phases:
       - echo Build started on `date`
       - mvn install
 
-      #Set hostname in hosts file to avoid possible 127 error on subsequent commands
-      - sudo su -c "echo '127.0.0.1 localhost $HOSTNAME' >> /etc/hosts"
-
-      #Create variable and export
-      - sudo su -c "echo 'export centostestbashrc=1' >> /etc/bashrc"
-      - sudo su -c "echo 'export centostestprofile=1' >> /etc/profile"
-      - sudo su -c "echo 'export ubuntutestbashrc=1' >> /etc/bash.bashrc"
-      - sudo su -c "echo 'export ubuntutestprofile=1' >> /etc/profile"
-
       #Hand type test
-      - sudo su -c "echo 'export casevariabletest=1' >> /etc/bash.bashrc"
+      - export ABC="123" >> ~/.bashrc
 
 
       #- env | grep test >> centosenvechobashrcbuild.txt
@@ -41,12 +32,10 @@ phases:
       #- cat /etc/bash.bashrc #&& printenv | grep test >> printenvbuild.txt
       #- cat /etc/bashrc #&& printenv | grep test >> printenvbuild.txt
       #- cat /etc/profile #&& printenv | grep test >> printenvbuild.txt
-      - echo `$casevariabletest`
-      - exec bash && mkdir $casevariabletest
-      - cd $casevariabletest
-      - pwd
-      - echo $casevariabletest >> printenvbuild.txt
-      #- cat printenvbuild.txt
+      - env
+      - env | grep ABC
+      - echo `ABC`
+
 
 
   post_build:
